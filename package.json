@@ -23,7 +23,7 @@
     "test": "test"
   },
   "keywords": [
-    "basic authentication",
+    "basic authentication"
   ],
   "author": "pubcore",
   "devDependencies": {
