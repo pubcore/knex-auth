@@ -1,7 +1,8 @@
 import chai, {expect} from 'chai'
 import chaiDatetime from 'chai-datetime'
 import getUser from '../../src/carrier/getUser'
-import createTestDb from '../../src/lib/createTestDb'
+import createTestDb from '@pubcore/knex-create-test-db'
+import {dbTypes} from '../../src/lib/cols'
 import defaultMap from '../userDefaultMap'
 chai.use(chaiDatetime)
 
@@ -10,7 +11,7 @@ const table = 'user'
 describe('get user', () => {
 	var now = new Date(),
 		users = [{created_time: now}],
-		knex = createTestDb({table, rows:defaultMap(users), beforeEach, after}),
+		knex = createTestDb({table, rows:defaultMap(users), beforeEach, after, dbTypes}),
 		db = {knex, table}
 
 	it('returns a promise', () => {

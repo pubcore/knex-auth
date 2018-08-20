@@ -1,12 +1,13 @@
 import {expect} from 'chai'
-import createTestDb from '../../src/lib/createTestDb'
+import createTestDb from '@pubcore/knex-create-test-db'
+import {dbTypes} from '../../src/lib/cols'
 import deactivateUser from '../../src/carrier/deactivateUser'
 import defaultMap from '../userDefaultMap'
 
 const table = 'user'
 
 describe('deactivateUser', () => {
-	var knex = createTestDb({table, rows:defaultMap(), beforeEach, after}),
+	var knex = createTestDb({table, rows:defaultMap(), beforeEach, after, dbTypes}),
 		db = {knex, table}
 
 	it('returns a promise', () => {

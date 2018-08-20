@@ -1,5 +1,6 @@
 import {expect} from 'chai'
-import createTestDb from '../../src/lib/createTestDb'
+import createTestDb from '@pubcore/knex-create-test-db'
+import {dbTypes} from '../../src/lib/cols'
 import updateLastLogin from '../../src/carrier/updateLastLogin'
 import defaultMap from '../userDefaultMap'
 import moment from 'moment-timezone'
@@ -8,7 +9,7 @@ const table = 'user'
 
 describe('updateLastLogin', () => {
 	var knex = createTestDb({
-			table, rows:defaultMap([{last_login:null}]), beforeEach, after
+			table, rows:defaultMap([{last_login:null}]), beforeEach, after, dbTypes
 		}),
 		db = {knex, table}
 

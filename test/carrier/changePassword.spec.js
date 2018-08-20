@@ -1,6 +1,7 @@
 import chai, {expect} from 'chai'
 import chaiAsPromised from 'chai-as-promised'
-import createTestDb from '../../src/lib/createTestDb'
+import createTestDb from '@pubcore/knex-create-test-db'
+import {dbTypes} from '../../src/lib/cols'
 import defaultMap from '../userDefaultMap'
 import changePasswordTemp from '../../src/carrier/changePassword'
 import comparePassword from '../../src/lib/comparePassword'
@@ -14,7 +15,7 @@ const changePassword = (db, user) => changePasswordTemp(db, {
 	table = 'user'
 
 describe('changePassword of new user', () => {
-	var knex = createTestDb({table, rows:defaultMap(), beforeEach, after}),
+	var knex = createTestDb({table, rows:defaultMap(), beforeEach, after, dbTypes}),
 		db = {knex, table}
 	it('returns a promise', () => {
 		expect( changePassword(db, {username:'xy'}) ).to.be.a('promise')
@@ -56,7 +57,8 @@ describe('change password of old user (password not null)', () => {
 			table,
 			rows: hashPassword('xyz').then(password => defaultMap([{password}])),
 			beforeEach,
-			after
+			after,
+			dbTypes
 		}),
 		db = {knex, table}
 	it('returns false, if current pw is wrong', () =>

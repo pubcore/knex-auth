@@ -1,5 +1,6 @@
 import {expect} from 'chai'
-import createTestDb from '../../src/lib/createTestDb'
+import createTestDb from '@pubcore/knex-create-test-db'
+import {dbTypes} from '../../src/lib/cols'
 import defaultMap from '../userDefaultMap'
 import addLoginFailed from '../../src/carrier/addLoginFailed'
 import resetLoginFailed from '../../src/carrier/addLoginFailedReset'
@@ -8,7 +9,7 @@ var before = moment.utc()
 const table = 'user'
 
 describe('addLoginFailed', () => {
-	var knex = createTestDb({table, rows:defaultMap([{login_failed_count:1}]), beforeEach, after}),
+	var knex = createTestDb({table, rows:defaultMap([{login_failed_count:1}]), beforeEach, after, dbTypes}),
 		db = {knex, table}
 	it('returns a promise', () => {
 		expect(addLoginFailed(db, {username:'-'})).to.be.a('promise')
