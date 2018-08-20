@@ -6,9 +6,10 @@ import updateLastLogin from './carrier/updateLastLogin'
 import resetLoginFailedCount from './carrier/addLoginFailedReset'
 import changePassword from './carrier/changePassword'
 import createTestDb from './lib/createTestDb'
+import {dbTypes} from './lib/cols'
 
 export {
 	getUser, comparePassword, deactivateUser, addLoginFailed, updateLastLogin,
-	resetLoginFailedCount, changePassword, createTestDb
+	resetLoginFailedCount, changePassword, createTestDb, dbTypes
 }
 export default getUser
