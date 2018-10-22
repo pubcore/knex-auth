@@ -17,7 +17,7 @@
     ]
   },
   "name": "@pubcore/knex-auth",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Functions to persist authentication state to a RDMS via knex",
   "repository": {
     "type": "git",
