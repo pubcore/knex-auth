@@ -1,5 +1,6 @@
-import {expect} from 'chai'
-import randWord from '../../src/lib/randomWord'
+'use strict'
+const {expect} = require('chai'),
+	randWord = require('../../js/lib/randomWord').default
 
 describe('cration of random, readable and arbitrary word', () => {
 	it('returns a random string, with default length 12', () => {

@@ -1,5 +1,6 @@
-import {expect} from 'chai'
-import hashPw from '../../src/lib/hashPassword'
+'use strict'
+const {expect} = require('chai'),
+	hashPw = require('../../js/lib/hashPassword').default
 
 describe('hash password', () => {
 	it('returns a promise', () => {

@@ -1,4 +1,4 @@
-export default (users=[{}]) => users.map(usr => ({...{
+exports.default = (users=[{}]) => users.map(usr => ({...{
 	username:'eve',
 	type:'HUMAN',
 	password_new:'xyz',

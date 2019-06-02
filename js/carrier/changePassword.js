@@ -1,7 +1,8 @@
-import comparePassword from '../lib/comparePassword'
-import hashPassword from '../lib/hashPassword'
+'use strict'
+const comparePassword = require('../lib/comparePassword').default,
+	hashPassword = require('../lib/hashPassword').default
 
-export default ({knex, table}, {username, password, passwordNew, passwordLifeTime}) => {
+exports.default = ({knex, table}, {username, password, passwordNew, passwordLifeTime}) => {
 	if(isNaN(+passwordLifeTime)){
 		//because new Date() does not throw any errors, we must check this here
 		return Promise.reject(new TypeError('illegal passwordLifeTime'))

@@ -1,12 +1,14 @@
-import {expect} from 'chai'
-import createTestDb from '@pubcore/knex-create-test-db'
-import {dbTypes} from '../../src/lib/cols'
-import defaultMap from '../userDefaultMap'
-import addLoginFailed from '../../src/carrier/addLoginFailed'
-import resetLoginFailed from '../../src/carrier/addLoginFailedReset'
-import moment from 'moment-timezone'
+'use strict'
+const {expect} = require('chai'),
+	createTestDb = require('@pubcore/knex-create-test-db').default,
+	{dbTypes} = require('../../js/lib/cols'),
+	defaultMap = require('../userDefaultMap').default,
+	addLoginFailed = require('../../js/carrier/addLoginFailed').default,
+	resetLoginFailed = require('../../js/carrier/addLoginFailedReset').default,
+	moment = require('moment-timezone'),
+	table = 'user'
+	
 var before = moment.utc()
-const table = 'user'
 
 describe('addLoginFailed', () => {
 	var knex = createTestDb({table, rows:defaultMap([{login_failed_count:1}]), beforeEach, after, dbTypes}),

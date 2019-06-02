@@ -1,11 +1,13 @@
-import {expect} from 'chai'
-import createTestDb from '@pubcore/knex-create-test-db'
-import {dbTypes} from '../../src/lib/cols'
-import updateLastLogin from '../../src/carrier/updateLastLogin'
-import defaultMap from '../userDefaultMap'
-import moment from 'moment-timezone'
+'use strict'
+const {expect} = require('chai'),
+	createTestDb = require('@pubcore/knex-create-test-db').default,
+	{dbTypes} = require('../../js/lib/cols'),
+	updateLastLogin = require('../../js/carrier/updateLastLogin').default,
+	defaultMap = require('../userDefaultMap').default,
+	moment = require('moment-timezone'),
+	table = 'user'
+	
 var before = moment.utc()
-const table = 'user'
 
 describe('updateLastLogin', () => {
 	var knex = createTestDb({

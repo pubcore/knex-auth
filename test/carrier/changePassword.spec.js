@@ -1,11 +1,13 @@
-import chai, {expect} from 'chai'
-import chaiAsPromised from 'chai-as-promised'
-import createTestDb from '@pubcore/knex-create-test-db'
-import {dbTypes} from '../../src/lib/cols'
-import defaultMap from '../userDefaultMap'
-import changePasswordTemp from '../../src/carrier/changePassword'
-import comparePassword from '../../src/lib/comparePassword'
-import hashPassword from '../../src/lib/hashPassword'
+'use strict'
+const chai = require('chai'),
+	{expect} = chai,
+	chaiAsPromised = require('chai-as-promised'),
+	createTestDb = require('@pubcore/knex-create-test-db').default,
+	{dbTypes} = require('../../js/lib/cols'),
+	defaultMap = require('../userDefaultMap').default,
+	changePasswordTemp = require('../../js/carrier/changePassword').default,
+	comparePassword = require('../../js/lib/comparePassword').default,
+	hashPassword = require('../../js/lib/hashPassword').default
 
 chai.use(chaiAsPromised)
 

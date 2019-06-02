@@ -1,10 +1,10 @@
-import {expect} from 'chai'
-import createTestDb from '@pubcore/knex-create-test-db'
-import {dbTypes} from '../../src/lib/cols'
-import deactivateUser from '../../src/carrier/deactivateUser'
-import defaultMap from '../userDefaultMap'
-
-const table = 'user'
+'use strict'
+const {expect} = require('chai'),
+	createTestDb = require('@pubcore/knex-create-test-db').default,
+	{dbTypes} = require('../../js/lib/cols'),
+	deactivateUser = require('../../js/carrier/deactivateUser').default,
+	defaultMap = require('../userDefaultMap').default,
+	table = 'user'
 
 describe('deactivateUser', () => {
 	var knex = createTestDb({table, rows:defaultMap(), beforeEach, after, dbTypes}),

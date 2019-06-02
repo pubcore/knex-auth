@@ -1,9 +1,9 @@
-import bcrypt from 'bcryptjs'
-import hashes from 'jshashes'
+'use strict'
+const bcrypt = require('bcryptjs'),
+	hashes = require('jshashes'),
+	sha1 = new hashes.SHA1()
 
-const sha1 = new hashes.SHA1()
-
-export default (cleartext, hash) => {
+exports.default = (cleartext, hash) => {
 	return bcrypt.compare(
 		sha1.hex(cleartext),//keep backward compatibility regarding migration from sha1 to bcrypted passwords
 		hash.substr(0, 3) === '$2y' ?

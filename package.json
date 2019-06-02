@@ -1,21 +1,10 @@
 {
   "scripts": {
-    "test": "nyc --reporter=text mocha --inspect --require babel-register --recursive",
-    "build": "babel src --out-dir js",
-    "prepare": "npm run build",
-    "watch": "babel --watch src --out-dir js",
+    "test": "nyc --reporter=text mocha --inspect --recursive",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "main": "js/index.js",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
-  },
   "name": "@pubcore/knex-auth",
   "version": "1.0.4",
   "description": "Functions to persist authentication state to a RDMS via knex",
@@ -31,23 +20,20 @@
   ],
   "author": "pubcore",
   "devDependencies": {
-    "@pubcore/knex-create-test-db": "^1.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "chai": "^4.1.2",
+    "@pubcore/knex-create-test-db": "^1.1.0",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-datetime": "^1.5.0",
-    "eslint": "^4.19.1",
-    "eslint-plugin-mocha": "^5.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-mocha": "^5.3.0",
     "mocha": "^5.2.0",
-    "moment-timezone": "^0.5.21",
-    "nyc": "^12.0.2"
+    "moment-timezone": "^0.5.25",
+    "nyc": "^14.1.1"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "jshashes": "^1.0.7",
-    "knex": "^0.14.6",
-    "prop-types": "^15.6.2"
+    "knex": "^0.17.2",
+    "prop-types": "^15.7.2"
   }
 }

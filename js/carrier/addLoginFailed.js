@@ -1,4 +1,5 @@
-export default ({knex, table}, {username}) => Promise.resolve(
+'use strict'
+exports.default = ({knex, table}, {username}) => Promise.resolve(
 	knex(table).where({username}).update({
 		last_login_failed:new Date(),
 		login_failed_count:knex.raw('login_failed_count + 1')

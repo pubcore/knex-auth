@@ -1,6 +1,7 @@
-import comparePassword from '../../src/lib/comparePassword'
-import {expect} from 'chai'
-import hashPassword from '../../src/lib/hashPassword'
+'use strict'
+const comparePassword = require('../../js/lib/comparePassword').default,
+	{expect} = require('chai'),
+	hashPassword = require('../../js/lib/hashPassword').default
 
 describe('compare bcrypted password', () => {
 	it('returns a promise, because bcrypt is slow', () => {

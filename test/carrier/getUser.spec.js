@@ -1,12 +1,14 @@
-import chai, {expect} from 'chai'
-import chaiDatetime from 'chai-datetime'
-import getUser from '../../src/carrier/getUser'
-import createTestDb from '@pubcore/knex-create-test-db'
-import {dbTypes} from '../../src/lib/cols'
-import defaultMap from '../userDefaultMap'
-chai.use(chaiDatetime)
+'use strict'
+const chai = require('chai'),
+	{expect} = chai,
+	chaiDatetime = require('chai-datetime'),
+	getUser = require('../../js/carrier/getUser').default,
+	createTestDb = require('@pubcore/knex-create-test-db').default,
+	{dbTypes} = require('../../js/lib/cols'),
+	defaultMap = require('../userDefaultMap').default,
+	table = 'user'
 
-const table = 'user'
+chai.use(chaiDatetime)
 
 describe('get user', () => {
 	var now = new Date(),
