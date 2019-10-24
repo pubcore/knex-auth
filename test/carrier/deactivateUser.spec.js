@@ -1,6 +1,6 @@
 'use strict'
 const {expect} = require('chai'),
-	createTestDb = require('@pubcore/knex-create-test-db').default,
+	createTestDb = require('@pubcore/knex-create-test-db'),
 	{dbTypes} = require('../../js/lib/cols'),
 	deactivateUser = require('../../js/carrier/deactivateUser').default,
 	defaultMap = require('../userDefaultMap').default,

@@ -2,7 +2,7 @@
 const chai = require('chai'),
 	{expect} = chai,
 	chaiAsPromised = require('chai-as-promised'),
-	createTestDb = require('@pubcore/knex-create-test-db').default,
+	createTestDb = require('@pubcore/knex-create-test-db'),
 	{dbTypes} = require('../../js/lib/cols'),
 	defaultMap = require('../userDefaultMap').default,
 	changePasswordTemp = require('../../js/carrier/changePassword').default,

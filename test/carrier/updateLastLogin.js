@@ -1,12 +1,12 @@
 'use strict'
 const {expect} = require('chai'),
-	createTestDb = require('@pubcore/knex-create-test-db').default,
+	createTestDb = require('@pubcore/knex-create-test-db'),
 	{dbTypes} = require('../../js/lib/cols'),
 	updateLastLogin = require('../../js/carrier/updateLastLogin').default,
 	defaultMap = require('../userDefaultMap').default,
 	moment = require('moment-timezone'),
 	table = 'user'
-	
+
 var before = moment.utc()
 
 describe('updateLastLogin', () => {
